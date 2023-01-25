@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bamshadit.javafxmysql1.LoadAll">
+   <children>
+      <TableView layoutX="26.0" layoutY="21.0" prefHeight="349.0" prefWidth="670.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Order Item Id" />
+          <TableColumn prefWidth="75.0" text="Order Id" />
+            <TableColumn prefWidth="75.0" text="Product Id" />
+            <TableColumn prefWidth="75.0" text="Customer Id" />
+            <TableColumn prefWidth="75.0" text="Product Qty" />
+            <TableColumn prefWidth="133.0" text="Product Net Revenue" />
+            <TableColumn prefWidth="161.0" text="Product Gross Revenue" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
