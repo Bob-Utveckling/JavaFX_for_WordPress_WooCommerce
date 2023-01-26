@@ -1,6 +1,8 @@
 package com.bamshadit.javafxmysql1.controller;
 
 import com.bamshadit.javafxmysql1.model.Customer;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -25,7 +27,7 @@ public class CustomerController {
     @FXML
     private TableColumn<Customer, String> FirstNameCol;
     @FXML
-    private TableColumn<Customer, String> LastNameNameCol;
+    private TableColumn<Customer, String> LastNameCol;
     @FXML
     private TableColumn<Customer, String> AddressCol;
     @FXML
@@ -41,26 +43,36 @@ public class CustomerController {
     @FXML
     private TableColumn<Customer, String> CurrencyCol;
 
-    public List<Customer> getCustomers() {
-        Customer c1 = new Customer("B","L","123 Södra","Nöd","44931","Swe","b@b.se","123","SEK");
-        Customer c2 = new Customer("B","L","123 Södra","Nöd","44931","Swe","b@b.se","123","SEK");
-        Customer c3 = new Customer("B","L","123 Södra","Nöd","44931","Swe","b@b.se","123","SEK");
-        Customer c4 = new Customer("B","L","123 Södra","Nöd","44931","Swe","b@b.se","123","SEK");
-        List<Customer> Customers = new ArrayList<>();
-        Customers.add(c1);
-        Customers.add(c2);
-        Customers.add(c3);
-        Customers.add(c4);
-        return Customers;
-    }
 
     public void initializeCols() {
-        FirstNameCol.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
+        FirstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        LastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        AddressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
+        CityCol.setCellValueFactory(new PropertyValueFactory<>("city"));
+        PostCodeCol.setCellValueFactory(new PropertyValueFactory<>("postCode"));
+        CountryCol.setCellValueFactory(new PropertyValueFactory<>("country"));
+        EmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        PhoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        CurrencyCol.setCellValueFactory(new PropertyValueFactory<>("currency"));
+
     }
     public void updateTable() {
+        SimpleStringProperty name = new SimpleStringProperty();
+        name.set("B");
         ObservableList<Customer> custList = FXCollections.observableArrayList();
-        custList.add(new Customer("B","L","123 Södra","Nöd","44931","Swe","b@b.se","123","SEK"));
-        custList.add(new Customer("B","L","123 Södra","Nöd","44931","Swe","b@b.se","123","SEK"));
+        custList.add(new Customer(
+                new SimpleStringProperty("Bob"),
+                new SimpleStringProperty("L."),
+                new SimpleStringProperty("123 Södra"),
+                new SimpleStringProperty("Nöd"),
+                new SimpleStringProperty("44931"),
+                new SimpleStringProperty("Swe"),
+                new SimpleStringProperty("b@b.se"),
+                new SimpleStringProperty("123"),
+                new SimpleStringProperty("SEK")
+            )
+        );
+
         CustomerTable.setItems(custList);
     }
 

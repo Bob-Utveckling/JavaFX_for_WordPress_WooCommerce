@@ -1,97 +1,136 @@
 package com.bamshadit.javafxmysql1.model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Customer {
-    String FirstName;
-    String LastName;
-    String Address;
-    String City;
-    String PostCode;
-    String Country;
-    String Email;
-    String Phone;
-    String Currrency;
-
-    public Customer(String firstName, String lastName, String address, String city, String postCode, String country, String email, String phone, String currrency) {
-        FirstName = firstName;
-        LastName = lastName;
-        Address = address;
-        City = city;
-        PostCode = postCode;
-        Country = country;
-        Email = email;
-        Phone = phone;
-        Currrency = currrency;
+    //String firstName;
+    private StringProperty firstName = new SimpleStringProperty();
+    public final StringProperty firstNameProperty() {
+        return firstName;
     }
-
     public String getFirstName() {
-        return FirstName;
+        return firstName.get();
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setFirstName(String value) {
+        firstName.set(value);
+    }
+    private StringProperty lastName;
+    private StringProperty address;
+    private StringProperty city;
+    private StringProperty postCode;
+    private StringProperty country;
+    private StringProperty email;
+    private StringProperty phone;
+
+    private StringProperty currency;
+
+    public Customer(SimpleStringProperty firstName, SimpleStringProperty lastName, SimpleStringProperty address, SimpleStringProperty city, SimpleStringProperty postCode, SimpleStringProperty country, SimpleStringProperty email, SimpleStringProperty phone, SimpleStringProperty currency) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.postCode = postCode;
+        this.country = country;
+        this.email = email;
+        this.phone = phone;
+        this.currency = currency;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName.get();
+    }
+
+    public StringProperty lastNameProperty() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName.set(lastName);
     }
 
     public String getAddress() {
-        return Address;
+        return address.get();
+    }
+
+    public StringProperty addressProperty() {
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address.set(address);
     }
 
     public String getCity() {
-        return City;
+        return city.get();
+    }
+
+    public StringProperty cityProperty() {
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city.set(city);
     }
 
     public String getPostCode() {
-        return PostCode;
+        return postCode.get();
+    }
+
+    public StringProperty postCodeProperty() {
+        return postCode;
     }
 
     public void setPostCode(String postCode) {
-        PostCode = postCode;
+        this.postCode.set(postCode);
     }
 
     public String getCountry() {
-        return Country;
+        return country.get();
+    }
+
+    public StringProperty countryProperty() {
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country.set(country);
     }
 
     public String getEmail() {
-        return Email;
+        return email.get();
+    }
+
+    public StringProperty emailProperty() {
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email.set(email);
     }
 
     public String getPhone() {
-        return Phone;
+        return phone.get();
+    }
+
+    public StringProperty phoneProperty() {
+        return phone;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone.set(phone);
     }
 
-    public String getCurrrency() {
-        return Currrency;
+    public String getCurrency() {
+        return currency.get();
     }
 
-    public void setCurrrency(String currrency) {
-        Currrency = currrency;
+    public StringProperty currencyProperty() {
+        return currency;
+    }
+
+    public void setCurrency(String currrency) {
+        this.currency.set(currrency);
     }
 }
