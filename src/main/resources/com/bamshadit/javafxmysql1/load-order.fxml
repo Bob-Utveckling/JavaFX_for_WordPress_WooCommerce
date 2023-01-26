@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bamshadit.javafxmysql1.LoadOrderController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bamshadit.javafxmysql1.controller.LoadOrderController">
    <children>
       <TextField layoutX="28.0" layoutY="23.0" promptText="Order Id" />
       <TextField layoutX="28.0" layoutY="86.0" promptText="Product Id" />

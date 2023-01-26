@@ -1,5 +1,6 @@
-package com.bamshadit.javafxmysql1;
+package com.bamshadit.javafxmysql1.controller;
 
+import com.bamshadit.javafxmysql1.Dao.JdbcDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

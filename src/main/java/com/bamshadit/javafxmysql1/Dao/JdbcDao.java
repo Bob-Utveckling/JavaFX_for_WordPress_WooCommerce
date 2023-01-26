@@ -1,4 +1,4 @@
-package com.bamshadit.javafxmysql1;
+package com.bamshadit.javafxmysql1.Dao;
 
 import java.io.IOException;
 import java.sql.*;

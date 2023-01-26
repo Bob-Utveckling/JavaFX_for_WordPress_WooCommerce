@@ -1,8 +1,8 @@
-package com.bamshadit.javafxmysql1;
+package com.bamshadit.javafxmysql1.controller;
 
 import javafx.scene.control.TableView;
 
-public class LoadAll {
+public class LoadAllOrders {
 
     TableView tableView = new TableView();
 }
