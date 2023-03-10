@@ -1,5 +1,6 @@
 package com.bamshadit.javafxmysql1.controller;
 
+import com.bamshadit.javafxmysql1.Dao.JdbcDao;
 import com.bamshadit.javafxmysql1.model.Customer;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -14,6 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerController {
+
+    @FXML
+    public void temp_getDBCustomers() {
+        JdbcDao jdbcDao = new JdbcDao();
+        jdbcDao.getAllCustomers();
+    }
 
     @FXML
     public void temp_getCustomers() {

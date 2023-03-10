@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.sql.*;
 
 public class JdbcDao {
-
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/test?useSSL=false";
-    public static final String DATABASE_USERNAME = "bob2";
-    public static final String DATABASE_PASSWORD = "bob2";
+    static Properties properties = new Properties();
+    private static final String DATABASE_URL = properties.DATABASE_URL;
+    public static final String DATABASE_USERNAME = properties.DATABASE_USERNAME;
+    public static final String DATABASE_PASSWORD = properties.DATABASE_PASSWORD;
     public static final String INSERT_QUERY = "INSERT INTO user (name, email) VALUES (?, ?)";
 
     public void insertRecord(String name, String email) throws SQLException {
@@ -42,9 +42,10 @@ public class JdbcDao {
             ResultSet rs = st.executeQuery("SELECT * FROM user");
             while (rs.next())
             {
+                String id = rs.getString("id");
                 String name = rs.getString("name");
                 String email = rs.getString("email");
-                System.out.println("name: " + name + ", email: " + email);
+                System.out.println("id: " + id + ", name: " + name + ", email: " + email);
             }
         } catch (SQLException e) {
             //print SQL exception information
